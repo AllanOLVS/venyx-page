@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Esconde barra de rolagem mantendo a funcionalidade (do seu código original) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Efeitos do carrossel */
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.carousel-track:hover .carousel-card {
+  opacity: 0.4;
+  transform: scale(0.95);
+}
+
+.carousel-track .carousel-card:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  z-index: 20;
+  box-shadow: 0 0 40px rgba(37, 99, 235, 0.3);
+  border-color: rgba(59, 130, 246, 0.5);
+}
