@@ -22,7 +22,8 @@ export default function Contato() {
                 formRef.current.reset();
                 setTimeout(() => setStatus('idle'), 5000);
             })
-            .catch(() => {
+            .catch((err) => {
+                console.error('EmailJS Error:', err);
                 setStatus('error');
                 setTimeout(() => setStatus('idle'), 5000);
             });
