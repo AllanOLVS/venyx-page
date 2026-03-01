@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import logoVenyx from '../assets/logos/logo-venyx-sfundo.png';
 
 export default function Navbar({ mainContentBlur }) {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -14,12 +15,10 @@ export default function Navbar({ mainContentBlur }) {
     return (
         <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-[#030712]/80 backdrop-blur-lg border-b border-white/5 py-4' : 'bg-transparent py-6'} ${mainContentBlur}`}>
             <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-                <div className="flex items-center gap-2 cursor-pointer group">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-700 rounded-lg flex items-center justify-center font-bold text-xl text-white shadow-[0_0_15px_rgba(59,130,246,0.5)] group-hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition-all">
-                        VX
-                    </div>
-                    <span className="text-xl font-bold tracking-tight text-white">Venyx <span className="text-blue-500">Technology</span></span>
-                </div>
+                <a href="#" className="flex items-center gap-3 cursor-pointer group">
+                    <img src={logoVenyx} alt="Venyx Technology" className="w-12 h-12 object-contain group-hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.6)] transition-all" />
+                    <span className="text-2xl font-bold tracking-tight text-white">Venyx <span className="text-blue-500">Technology</span></span>
+                </a>
 
                 <div className="hidden md:flex items-center gap-8 text-sm font-medium">
                     <a href="#servicos" className="hover:text-blue-400 transition-colors">Serviços</a>

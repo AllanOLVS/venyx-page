@@ -1,6 +1,7 @@
 import React from 'react';
 import { Rocket, ChevronRight, Code2 } from 'lucide-react';
 import FadeIn from './FadeIn';
+import logoVenyx from '../assets/logos/logo-venyx-sfundo.png';
 
 export default function Hero() {
     return (
@@ -42,12 +43,11 @@ export default function Hero() {
                     <div className="relative w-full aspect-square md:aspect-auto md:h-[600px] flex items-center justify-center">
                         <div className="absolute w-64 h-64 md:w-96 md:h-96 border border-blue-500/30 rounded-full animate-[spin_20s_linear_infinite]"></div>
                         <div className="absolute w-48 h-48 md:w-72 md:h-72 border border-indigo-500/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
-                        <div className="absolute w-full max-w-md h-64 bg-gradient-to-tr from-blue-900/40 to-indigo-900/40 backdrop-blur-3xl rounded-2xl border border-white/10 p-6 flex flex-col justify-between shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <div className="absolute w-full max-w-md h-72 bg-gradient-to-tr from-blue-900/40 to-indigo-900/40 backdrop-blur-3xl rounded-2xl border border-white/10 p-6 flex flex-col justify-between shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
                             <div className="flex justify-between items-center border-b border-white/10 pb-4">
-                                <div className="flex gap-2">
-                                    <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                                    <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                                    <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                                <div className="flex items-center gap-3">
+                                    <img src={logoVenyx} alt="Venyx Technology" className="w-8 h-8 object-contain" />
+                                    <span className="text-white font-bold text-sm">Venyx Technology</span>
                                 </div>
                                 <Code2 className="text-blue-400" size={20} />
                             </div>

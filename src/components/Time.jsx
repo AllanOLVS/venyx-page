@@ -1,32 +1,35 @@
 import React from 'react';
 import { Cpu, Github, Linkedin } from 'lucide-react';
 import FadeIn from './FadeIn';
+import fotoAllan from '../assets/image-profile-team/Foto-Allan-Profissional.png';
+import fotoGabriel from '../assets/image-profile-team/foto-gabriel-profissional.jpeg';
+import fotoLucas from '../assets/image-profile-team/foto-lucas-profissional.jpeg';
 
 export default function Time() {
     const team = [
         {
-            name: "Gabriel Leal",
-            role: "Co-Founder & Software Engineer",
-            stack: "Frontend & UI/UX | React, Tailwind",
-            github: "#",
-            linkedin: "#",
-            image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=400"
-        },
-        {
             name: "Allan Oliveira",
             role: "Co-Founder & Software Engineer",
-            stack: "Backend & Cloud | Node.js, AWS",
-            github: "#",
-            linkedin: "#",
-            image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400&h=400"
+            stack: "Fullstack Developer | Java, Spring, Phyton, JavaScript, Node, React, Tailwind, AWS, SQL",
+            github: "https://github.com/AllanOLVS",
+            linkedin: "https://www.linkedin.com/in/allan-oliveira-224120260",
+            image: fotoAllan
+        },
+        {
+            name: "Gabriel Leal",
+            role: "Co-Founder & Software Engineer",
+            stack: "Fullstack Developer | Java, Spring, Phyton, JavaScript, Node, React, Tailwind, AWS, SQL",
+            github: "https://github.com/Gabriellealsantos",
+            linkedin: "https://www.linkedin.com/in/gabriel-leal-santos/",
+            image: fotoGabriel
         },
         {
             name: "Lucas Torres",
             role: "Co-Founder & Software Engineer",
-            stack: "Fullstack & Architecture | Java, Spring",
-            github: "#",
-            linkedin: "#",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400&h=400"
+            stack: "Fullstack Developer | Java, Spring, Phyton, JavaScript, Node, React, Tailwind, AWS, SQL",
+            github: "https://github.com/lucas-torres10",
+            linkedin: "https://www.linkedin.com/in/lucas-torres-05879a221/",
+            image: fotoLucas
         }
     ];
 
@@ -44,15 +47,15 @@ export default function Time() {
 
                 <div className="grid md:grid-cols-3 gap-10">
                     {team.map((member, idx) => (
-                        <FadeIn key={idx} delay={idx * 150} direction="up">
+                        <FadeIn key={idx} delay={idx * 150} direction={idx % 2 === 0 ? 'right' : 'left'}>
                             <div className="group relative">
                                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
                                 <div className="relative bg-[#0a0f1a] border border-white/10 rounded-2xl p-6 flex flex-col items-center text-center h-full hover:border-blue-500/50 transition-colors">
-                                    <div className="w-32 h-32 rounded-full mb-6 p-1 bg-gradient-to-br from-blue-500 to-indigo-600">
+                                    <div className="w-40 h-40 rounded-full mb-6 p-1 bg-gradient-to-br from-blue-500 to-indigo-600">
                                         <img
                                             src={member.image}
                                             alt={member.name}
-                                            className="w-full h-full object-cover rounded-full border-4 border-[#0a0f1a] grayscale group-hover:grayscale-0 transition-all duration-500"
+                                            className="w-full h-full object-cover rounded-full border-4 border-[#0a0f1a] transition-all duration-500"
                                         />
                                     </div>
                                     <h3 className="text-2xl font-bold text-white mb-1">{member.name}</h3>
@@ -63,10 +66,10 @@ export default function Time() {
                                         {member.stack}
                                     </p>
                                     <div className="flex gap-4 mt-6">
-                                        <a href={member.github} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:bg-blue-600 hover:text-white transition-all">
+                                        <a href={member.github} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:bg-blue-600 hover:text-white transition-all">
                                             <Github size={20} />
                                         </a>
-                                        <a href={member.linkedin} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:bg-blue-600 hover:text-white transition-all">
+                                        <a href={member.linkedin} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:bg-blue-600 hover:text-white transition-all">
                                             <Linkedin size={20} />
                                         </a>
                                     </div>

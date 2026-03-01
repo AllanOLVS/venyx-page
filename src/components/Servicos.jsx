@@ -23,7 +23,7 @@ export default function Servicos() {
 
                 <div className="grid md:grid-cols-3 gap-8">
                     {servicesData.map((service, idx) => (
-                        <FadeIn key={idx} delay={idx * 150}>
+                        <FadeIn key={idx} delay={idx * 150} direction={idx % 2 === 0 ? 'right' : 'left'}>
                             <div className="group h-full bg-white/[0.02] border border-white/5 rounded-2xl p-8 hover:bg-white/[0.04] hover:border-blue-500/30 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-[50px] group-hover:bg-blue-500/20 transition-all"></div>
                                 <div className="w-16 h-16 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">

@@ -20,10 +20,10 @@ export default function FadeIn({ children, delay = 0, direction = 'up' }) {
     }, []);
 
     const getTransform = () => {
-        if (direction === 'up') return 'translateY(30px)';
-        if (direction === 'down') return 'translateY(-30px)';
-        if (direction === 'left') return 'translateX(30px)';
-        if (direction === 'right') return 'translateX(-30px)';
+        if (direction === 'up') return 'translateY(40px)';
+        if (direction === 'down') return 'translateY(-40px)';
+        if (direction === 'left') return 'translateX(80px)';
+        if (direction === 'right') return 'translateX(-80px)';
         return 'none';
     };
 
