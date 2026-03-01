@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cpu, Github, Linkedin } from 'lucide-react';
 import FadeIn from './FadeIn';
-import fotoAllan from '../assets/image-profile-team/Foto-Allan-Profissional.png';
+import fotoAllan from '../assets/image-profile-team/Foto-Allan-Profissional.jpg';
 import fotoGabriel from '../assets/image-profile-team/foto-gabriel-profissional.jpeg';
 import fotoLucas from '../assets/image-profile-team/foto-lucas-profissional.jpeg';
 

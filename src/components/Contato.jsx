@@ -12,10 +12,10 @@ export default function Contato() {
         setStatus('sending');
 
         emailjs.sendForm(
-            'service_venyx',      // Service ID — configurar no painel do EmailJS
-            'template_venyx',     // Template ID — configurar no painel do EmailJS
+            'service_txx0vad',
+            'template_69j48gd',
             formRef.current,
-            'YOUR_PUBLIC_KEY'     // Public Key — configurar no painel do EmailJS
+            'YoksSbmWuadpt2kp8'
         )
             .then(() => {
                 setStatus('success');
@@ -53,7 +53,7 @@ export default function Contato() {
                                 <label className="text-sm font-semibold text-slate-300 mb-2">Nome *</label>
                                 <input
                                     type="text"
-                                    name="user_name"
+                                    name="nome"
                                     placeholder="Seu nome completo"
                                     required
                                     className="bg-[#030712] border border-white/10 rounded-lg px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
@@ -64,7 +64,7 @@ export default function Contato() {
                                 <label className="text-sm font-semibold text-slate-300 mb-2">E-mail *</label>
                                 <input
                                     type="email"
-                                    name="user_email"
+                                    name="email"
                                     placeholder="seu.email@exemplo.com"
                                     required
                                     className="bg-[#030712] border border-white/10 rounded-lg px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
@@ -76,7 +76,7 @@ export default function Contato() {
                             <label className="text-sm font-semibold text-slate-300 mb-2">Assunto</label>
                             <input
                                 type="text"
-                                name="subject"
+                                name="assunto"
                                 placeholder="Motivo do contato (Ex: Desenvolvimento de App, Novo Sistema...)"
                                 className="bg-[#030712] border border-white/10 rounded-lg px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
                             />
@@ -86,7 +86,7 @@ export default function Contato() {
                             <label className="text-sm font-semibold text-slate-300 mb-2">Mensagem</label>
                             <textarea
                                 rows="5"
-                                name="message"
+                                name="mensagem"
                                 placeholder="Escreva os detalhes da sua ideia ou projeto aqui..."
                                 className="bg-[#030712] border border-white/10 rounded-lg px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none"
                             ></textarea>
