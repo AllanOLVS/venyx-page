@@ -2,30 +2,152 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Esconde barra de rolagem mantendo a funcionalidade (do seu código original) */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+@layer base {
+  html {
+    color-scheme: dark;
+    background-color: #030712;
+    scroll-padding-top: 88px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    letter-spacing: 0.005em;
+    font-optical-sizing: auto;
+  }
+
+  ::selection {
+    background-color: rgba(59, 130, 246, 0.35);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 3px;
+  }
+
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
+
+  input,
+  textarea {
+    caret-color: #60a5fa;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.35) transparent;
+  }
 }
 
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+/* Tipografia
+   Archivo em dois registros: larga e pesada para títulos, normal para leitura. */
+@layer components {
+  .type-display {
+    font-size: clamp(2.5rem, 1.25rem + 3.9vw, 4.75rem);
+    font-weight: 800;
+    font-stretch: 112%;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+  }
+
+  .type-display > span {
+    text-wrap: balance;
+  }
+
+  .type-headline {
+    font-size: clamp(2rem, 1.35rem + 2.5vw, 3.5rem);
+    font-weight: 800;
+    font-stretch: 112%;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+
+  .type-title {
+    font-weight: 650;
+    line-height: 1.25;
+    letter-spacing: -0.012em;
+  }
+
+  .type-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-stretch: 110%;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .type-numeral {
+    font-weight: 800;
+    font-stretch: 115%;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .type-wordmark {
+    font-weight: 750;
+    font-stretch: 110%;
+    letter-spacing: -0.02em;
+  }
 }
 
-/* Efeitos do carrossel */
-.carousel-track:hover {
-  animation-play-state: paused;
+/* Movimento
+   Momento principal: os retratos dos sócios se revelam no topo, um após o outro.
+   O resto do movimento é só resposta a ações (hover, abrir janela, enviar). */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.carousel-track:hover .carousel-card {
-  opacity: 0.4;
-  transform: scale(0.95);
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
 }
 
-.carousel-track .carousel-card:hover {
-  opacity: 1;
-  transform: scale(1.05);
-  z-index: 20;
-  box-shadow: 0 0 40px rgba(37, 99, 235, 0.3);
-  border-color: rgba(59, 130, 246, 0.5);
+@keyframes portrait-reveal {
+  from { clip-path: inset(100% 0 0 0); filter: blur(8px); transform: translateY(16px); }
+  to { clip-path: inset(0 0 0 0); filter: blur(0); transform: none; }
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.hero-copy {
+  animation: rise-in 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-portrait {
+  animation: portrait-reveal 1000ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(250ms + var(--i, 0) * 90ms);
+}
+
+.animate-fade-in {
+  animation: fade-in 200ms ease-out both;
+}
+
+.animate-modal-in {
+  animation: modal-in 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy,
+  .hero-portrait,
+  .animate-modal-in {
+    animation: fade-in 250ms ease-out both;
+    animation-delay: 0ms;
+  }
 }

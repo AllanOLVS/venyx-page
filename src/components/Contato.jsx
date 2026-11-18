@@ -1,137 +1,209 @@
-import React, { useRef, useState } from 'react';
-import { Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
-import FadeIn from './FadeIn';
+import { useRef, useState } from 'react';
+import { Send, CheckCircle, AlertCircle, Clock, MessageCircle, UserCheck, Mail } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import SectionHeading from './SectionHeading';
+import WhatsAppIcon from './WhatsAppIcon';
+import { WHATSAPP_URL, PHONE_DISPLAY, EMAIL } from '../data/contact';
+
+const fieldClass =
+    'w-full rounded-lg border border-white/10 bg-[#030712] px-4 py-3.5 text-base text-white placeholder:text-slate-400 transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500';
+const labelClass = 'mb-2 block text-sm font-semibold text-slate-300';
+const directClass =
+    'inline-flex items-center gap-3 text-[1.0625rem] font-medium text-white underline decoration-white/20 underline-offset-[6px] transition-colors hover:text-blue-300 hover:decoration-blue-300';
+const promiseIcon = 'mt-0.5 shrink-0 text-blue-400';
+
+const promises = [
+    { icon: <UserCheck size={20} aria-hidden="true" className={promiseIcon} />, text: 'Você fala direto com um dos sócios, sem intermediários.' },
+    { icon: <Clock size={20} aria-hidden="true" className={promiseIcon} />, text: 'Resposta em até 24 horas úteis.' },
+    { icon: <MessageCircle size={20} aria-hidden="true" className={promiseIcon} />, text: 'A primeira conversa é sem custo e sem compromisso.' },
+];
+
+function Required() {
+    return (
+        <>
+            <span aria-hidden="true" className="text-blue-400"> *</span>
+            <span className="sr-only"> (obrigatório)</span>
+        </>
+    );
+}
 
 export default function Contato() {
-    const formRef = useRef();
+    const formRef = useRef(null);
     const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (status === 'sending') return;
         setStatus('sending');
 
-        emailjs.sendForm(
-            'service_txx0vad',
-            'template_69j48gd',
-            formRef.current,
-            'YoksSbmWuadpt2kp8'
-        )
+        emailjs
+            .sendForm('service_txx0vad', 'template_69j48gd', formRef.current, 'YoksSbmWuadpt2kp8')
             .then(() => {
                 setStatus('success');
                 formRef.current.reset();
-                setTimeout(() => setStatus('idle'), 5000);
             })
             .catch((err) => {
                 console.error('EmailJS Error:', err);
                 setStatus('error');
-                setTimeout(() => setStatus('idle'), 5000);
             });
     };
 
+    const clearFeedback = () => {
+        if (status === 'success' || status === 'error') setStatus('idle');
+    };
+
     return (
-        <section id="contato" className="py-24 relative overflow-hidden">
-            <div className="absolute inset-0 bg-blue-900/10"></div>
-            <div className="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-t from-blue-900/20 to-transparent pointer-events-none"></div>
+        <section id="contato" aria-labelledby="contato-title" className="relative bg-blue-900/10 py-24 md:py-32">
+            <div className="mx-auto grid max-w-7xl gap-14 px-6 md:px-12 lg:grid-cols-12 lg:gap-16">
+                <div className="lg:col-span-5">
+                    <SectionHeading id="contato-title" layout="stacked">
+                        Conte o que você quer <span className="text-blue-400">construir</span>
+                    </SectionHeading>
 
-            <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10">
-                <FadeIn direction="right">
-                    <div className="text-center mb-12">
-                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-blue-500/10 text-blue-400 mb-6 shadow-[0_0_30px_rgba(37,99,235,0.2)]">
-                            <Mail size={32} />
-                        </div>
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Pronto para <span className="text-blue-400">digitalizar</span> o seu negócio?</h2>
-                        <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-                            Não importa o quão complexa seja sua ideia, nossa equipe tem a expertise para transformá-la em um software sob medida. Vamos construir o futuro juntos.
-                        </p>
+                    <ul className="mt-10 border-t border-white/10">
+                        {promises.map(({ icon, text }) => (
+                            <li key={text} className="flex items-start gap-4 border-b border-white/10 py-5">
+                                {icon}
+                                <span className="text-[1.0625rem] leading-snug text-slate-200">{text}</span>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <div className="mt-10">
+                        <p className="type-label text-slate-400">Prefere conversar agora?</p>
+                        <ul className="mt-4 space-y-3">
+                            <li>
+                                <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className={directClass}>
+                                    <WhatsAppIcon size={18} className="shrink-0 text-[#25D366]" />
+                                    WhatsApp {PHONE_DISPLAY}
+                                    <span className="sr-only">(abre em nova aba)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href={`mailto:${EMAIL}`} className={directClass}>
+                                    <Mail size={18} aria-hidden="true" className="shrink-0 text-blue-400" />
+                                    <span className="break-all">{EMAIL}</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
+                </div>
 
-                    <form ref={formRef} onSubmit={handleSubmit} className="bg-[#0a0f1a]/80 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-2xl flex flex-col gap-6 shadow-2xl relative overflow-hidden">
-                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
+                <div className="lg:col-span-7">
+                <form
+                    ref={formRef}
+                    onSubmit={handleSubmit}
+                    onInput={clearFeedback}
+                    className="relative flex flex-col gap-6 overflow-hidden rounded-2xl border border-white/10 bg-[#0a0f1a] p-6 shadow-[0_24px_48px_-16px_rgba(0,0,0,0.6)] sm:p-8 md:p-10"
+                >
+                    <div aria-hidden="true" className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-blue-600 to-indigo-600" />
 
-                        <div className="grid md:grid-cols-2 gap-6">
-                            <div className="flex flex-col">
-                                <label className="text-sm font-semibold text-slate-300 mb-2">Nome *</label>
-                                <input
-                                    type="text"
-                                    name="nome"
-                                    placeholder="Seu nome completo"
-                                    required
-                                    className="bg-[#030712] border border-white/10 rounded-lg px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
-                                />
-                            </div>
-
-                            <div className="flex flex-col">
-                                <label className="text-sm font-semibold text-slate-300 mb-2">E-mail *</label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="seu.email@exemplo.com"
-                                    required
-                                    className="bg-[#030712] border border-white/10 rounded-lg px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col">
-                            <label className="text-sm font-semibold text-slate-300 mb-2">Assunto</label>
+                    <div className="grid gap-6 md:grid-cols-2">
+                        <div>
+                            <label htmlFor="contato-nome" className={labelClass}>
+                                Nome<Required />
+                            </label>
                             <input
+                                id="contato-nome"
                                 type="text"
-                                name="assunto"
-                                placeholder="Motivo do contato (Ex: Desenvolvimento de App, Novo Sistema...)"
-                                className="bg-[#030712] border border-white/10 rounded-lg px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                                name="nome"
+                                autoComplete="name"
+                                placeholder="Seu nome completo"
+                                required
+                                className={fieldClass}
                             />
                         </div>
-
-                        <div className="flex flex-col">
-                            <label className="text-sm font-semibold text-slate-300 mb-2">Mensagem</label>
-                            <textarea
-                                rows="5"
-                                name="mensagem"
-                                placeholder="Escreva os detalhes da sua ideia ou projeto aqui..."
-                                className="bg-[#030712] border border-white/10 rounded-lg px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all resize-none"
-                            ></textarea>
+                        <div>
+                            <label htmlFor="contato-email" className={labelClass}>
+                                E-mail<Required />
+                            </label>
+                            <input
+                                id="contato-email"
+                                type="email"
+                                name="email"
+                                autoComplete="email"
+                                placeholder="seu.email@exemplo.com"
+                                required
+                                className={fieldClass}
+                            />
                         </div>
+                    </div>
 
-                        <div className="pt-2 flex flex-col items-center gap-3">
-                            <button
-                                type="submit"
-                                disabled={status === 'sending'}
-                                className={`w-full md:w-auto px-10 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)] uppercase tracking-wider text-sm flex items-center justify-center gap-2 ${status === 'sending' ? 'opacity-60 cursor-not-allowed' : ''}`}
-                            >
-                                {status === 'sending' ? (
-                                    <>
-                                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                                        Enviando...
-                                    </>
-                                ) : (
-                                    <>
-                                        <Send size={18} />
-                                        Enviar Mensagem
-                                    </>
-                                )}
-                            </button>
+                    <div>
+                        <label htmlFor="contato-assunto" className={labelClass}>
+                            Assunto
+                        </label>
+                        <input
+                            id="contato-assunto"
+                            type="text"
+                            name="assunto"
+                            placeholder="Ex.: site para minha clínica, app de agendamento, sistema de estoque"
+                            className={fieldClass}
+                        />
+                    </div>
 
+                    <div>
+                        <label htmlFor="contato-mensagem" className={labelClass}>
+                            Mensagem
+                        </label>
+                        <textarea
+                            id="contato-mensagem"
+                            rows="5"
+                            name="mensagem"
+                            placeholder="Conte o que você precisa, do jeito que souber explicar."
+                            className={`${fieldClass} resize-y`}
+                        ></textarea>
+                    </div>
+
+                    <div className="flex flex-col items-center gap-4 pt-2">
+                        <button
+                            type="submit"
+                            disabled={status === 'sending'}
+                            aria-disabled={status === 'sending'}
+                            className="flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-10 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-[0_8px_24px_-10px_rgba(37,99,235,0.7)] transition-[background-color,box-shadow,opacity] duration-300 hover:bg-blue-500 hover:shadow-[0_12px_32px_-10px_rgba(37,99,235,0.9)] disabled:cursor-not-allowed disabled:opacity-60 md:w-auto"
+                        >
+                            {status === 'sending' ? (
+                                <>
+                                    <span
+                                        aria-hidden="true"
+                                        className="h-5 w-5 rounded-full border-2 border-white/30 border-t-white motion-safe:animate-spin"
+                                    />
+                                    Enviando...
+                                </>
+                            ) : (
+                                <>
+                                    <Send size={18} aria-hidden="true" />
+                                    Enviar mensagem
+                                </>
+                            )}
+                        </button>
+
+                        <div role="status" aria-live="polite" className="w-full text-center">
                             {status === 'success' && (
-                                <div className="flex items-center gap-2 text-green-400 text-sm font-medium animate-[fadeIn_0.3s_ease-out]">
-                                    <CheckCircle size={18} />
-                                    Mensagem enviada com sucesso! Entraremos em contato em breve.
-                                </div>
+                                <p className="animate-fade-in inline-flex items-start gap-2 text-left text-sm font-medium text-green-400">
+                                    <CheckCircle size={18} aria-hidden="true" className="mt-px shrink-0" />
+                                    Mensagem enviada. Um dos sócios responde em até 24 horas úteis no e-mail que
+                                    você informou.
+                                </p>
                             )}
-
                             {status === 'error' && (
-                                <div className="flex items-center gap-2 text-red-400 text-sm font-medium animate-[fadeIn_0.3s_ease-out]">
-                                    <AlertCircle size={18} />
-                                    Erro ao enviar. Tente novamente ou entre em contato via WhatsApp.
-                                </div>
+                                <p className="animate-fade-in inline-flex items-start gap-2 text-left text-sm font-medium text-red-400">
+                                    <AlertCircle size={18} aria-hidden="true" className="mt-px shrink-0" />
+                                    <span>
+                                        Não foi possível enviar a mensagem. Tente de novo em instantes ou fale com a
+                                        gente pelo{' '}
+                                        <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="underline underline-offset-4">
+                                            WhatsApp
+                                        </a>
+                                        .
+                                    </span>
+                                </p>
                             )}
                         </div>
-                    </form>
+                    </div>
+                </form>
 
-                    <p className="text-center text-slate-500 text-sm mt-6">
-                        Ou entre em contato diretamente: <a href="mailto:venyxtechnology@gmail.com" className="text-blue-400 hover:text-blue-300 transition-colors">venyxtechnology@gmail.com</a> | <a href="https://wa.me/5575988169508" target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">(75) 98816-9508</a>
-                    </p>
-                </FadeIn>
+                </div>
             </div>
         </section>
     );

@@ -6,17 +6,10 @@ export default {
   ],
   theme: {
     extend: {
-      animation: {
-        'infinite-scroll': 'infinite-scroll 40s linear infinite',
+      fontFamily: {
+        sans: ['"Archivo Variable"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
-      keyframes: {
-        'infinite-scroll': {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' }
-        }
-      }
     },
   },
   plugins: [],
 }
-

@@ -1,0 +1,607 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-05T15:00:00Z",
+  "title": "Design System: Venyx Technology",
+  "extensions": {
+    "colorMeta": {
+      "electric-blue": {
+        "role": "primary",
+        "displayName": "Azul Elétrico / Electric Blue",
+        "canonical": "#2563eb",
+        "tonalRamp": [
+          "#1e3a8a",
+          "#1e40af",
+          "#1d4ed8",
+          "#2563eb",
+          "#3b82f6",
+          "#60a5fa",
+          "#93c5fd",
+          "#dbeafe"
+        ]
+      },
+      "electric-blue-bright": {
+        "role": "primary",
+        "displayName": "Electric Blue Bright",
+        "canonical": "#3b82f6",
+        "tonalRamp": [
+          "#1e3a8a",
+          "#1e40af",
+          "#1d4ed8",
+          "#2563eb",
+          "#3b82f6",
+          "#60a5fa",
+          "#93c5fd",
+          "#dbeafe"
+        ]
+      },
+      "signal-blue": {
+        "role": "primary",
+        "displayName": "Signal Blue",
+        "canonical": "#60a5fa",
+        "tonalRamp": [
+          "#1e3a8a",
+          "#1e40af",
+          "#1d4ed8",
+          "#2563eb",
+          "#3b82f6",
+          "#60a5fa",
+          "#93c5fd",
+          "#dbeafe"
+        ]
+      },
+      "code-blue": {
+        "role": "primary",
+        "displayName": "Code Blue",
+        "canonical": "#93c5fd",
+        "tonalRamp": [
+          "#1e3a8a",
+          "#1e40af",
+          "#1d4ed8",
+          "#2563eb",
+          "#3b82f6",
+          "#60a5fa",
+          "#93c5fd",
+          "#dbeafe"
+        ]
+      },
+      "indigo-depth": {
+        "role": "secondary",
+        "displayName": "Indigo Depth",
+        "canonical": "#4f46e5",
+        "tonalRamp": [
+          "#312e81",
+          "#3730a3",
+          "#4338ca",
+          "#4f46e5",
+          "#6366f1",
+          "#818cf8",
+          "#a5b4fc",
+          "#e0e7ff"
+        ]
+      },
+      "indigo-glow": {
+        "role": "secondary",
+        "displayName": "Indigo Glow",
+        "canonical": "#6366f1",
+        "tonalRamp": [
+          "#312e81",
+          "#3730a3",
+          "#4338ca",
+          "#4f46e5",
+          "#6366f1",
+          "#818cf8",
+          "#a5b4fc",
+          "#e0e7ff"
+        ]
+      },
+      "night": {
+        "role": "neutral",
+        "displayName": "Night",
+        "canonical": "#030712",
+        "tonalRamp": [
+          "#030712",
+          "#111827",
+          "#1f2937",
+          "#374151",
+          "#4b5563",
+          "#6b7280",
+          "#9ca3af",
+          "#e5e7eb"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Panel",
+        "canonical": "#0a0f1a",
+        "tonalRamp": [
+          "#010308",
+          "#0a0f1a",
+          "#0f172a",
+          "#1e293b",
+          "#334155",
+          "#475569",
+          "#94a3b8",
+          "#e2e8f0"
+        ]
+      },
+      "abyss": {
+        "role": "neutral",
+        "displayName": "Abyss",
+        "canonical": "#010308",
+        "tonalRamp": [
+          "#010308",
+          "#030712",
+          "#0a0f1a",
+          "#111827",
+          "#1f2937",
+          "#374151",
+          "#6b7280",
+          "#e5e7eb"
+        ]
+      },
+      "text-strong": {
+        "role": "neutral",
+        "displayName": "Text Strong",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0f172a",
+          "#1e293b",
+          "#334155",
+          "#475569",
+          "#94a3b8",
+          "#cbd5e1",
+          "#e2e8f0",
+          "#ffffff"
+        ]
+      },
+      "text-body": {
+        "role": "neutral",
+        "displayName": "Text Body",
+        "canonical": "#e2e8f0",
+        "tonalRamp": [
+          "#0f172a",
+          "#1e293b",
+          "#334155",
+          "#475569",
+          "#64748b",
+          "#94a3b8",
+          "#cbd5e1",
+          "#e2e8f0"
+        ]
+      },
+      "text-soft": {
+        "role": "neutral",
+        "displayName": "Text Soft",
+        "canonical": "#cbd5e1",
+        "tonalRamp": [
+          "#0f172a",
+          "#1e293b",
+          "#334155",
+          "#475569",
+          "#64748b",
+          "#94a3b8",
+          "#cbd5e1",
+          "#e2e8f0"
+        ]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Text Muted",
+        "canonical": "#94a3b8",
+        "tonalRamp": [
+          "#0f172a",
+          "#1e293b",
+          "#334155",
+          "#475569",
+          "#64748b",
+          "#94a3b8",
+          "#cbd5e1",
+          "#e2e8f0"
+        ]
+      },
+      "text-faint": {
+        "role": "neutral",
+        "displayName": "Text Faint",
+        "canonical": "#64748b",
+        "tonalRamp": [
+          "#0f172a",
+          "#1e293b",
+          "#334155",
+          "#475569",
+          "#64748b",
+          "#94a3b8",
+          "#cbd5e1",
+          "#e2e8f0"
+        ]
+      },
+      "surface-veil": {
+        "role": "neutral",
+        "displayName": "Surface Veil",
+        "canonical": "rgba(255, 255, 255, 0.02)",
+        "tonalRamp": [
+          "rgba(255,255,255,0.02)",
+          "rgba(255,255,255,0.04)",
+          "rgba(255,255,255,0.05)",
+          "rgba(255,255,255,0.08)",
+          "rgba(255,255,255,0.1)",
+          "rgba(255,255,255,0.2)",
+          "rgba(255,255,255,0.4)",
+          "rgba(255,255,255,0.8)"
+        ]
+      },
+      "surface-veil-raised": {
+        "role": "neutral",
+        "displayName": "Surface Veil Raised",
+        "canonical": "rgba(255, 255, 255, 0.05)",
+        "tonalRamp": [
+          "rgba(255,255,255,0.02)",
+          "rgba(255,255,255,0.04)",
+          "rgba(255,255,255,0.05)",
+          "rgba(255,255,255,0.08)",
+          "rgba(255,255,255,0.1)",
+          "rgba(255,255,255,0.2)",
+          "rgba(255,255,255,0.4)",
+          "rgba(255,255,255,0.8)"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(255, 255, 255, 0.1)",
+        "tonalRamp": [
+          "rgba(255,255,255,0.02)",
+          "rgba(255,255,255,0.04)",
+          "rgba(255,255,255,0.05)",
+          "rgba(255,255,255,0.08)",
+          "rgba(255,255,255,0.1)",
+          "rgba(255,255,255,0.2)",
+          "rgba(255,255,255,0.4)",
+          "rgba(255,255,255,0.8)"
+        ]
+      },
+      "hairline-faint": {
+        "role": "neutral",
+        "displayName": "Hairline Faint",
+        "canonical": "rgba(255, 255, 255, 0.05)",
+        "tonalRamp": [
+          "rgba(255,255,255,0.02)",
+          "rgba(255,255,255,0.04)",
+          "rgba(255,255,255,0.05)",
+          "rgba(255,255,255,0.08)",
+          "rgba(255,255,255,0.1)",
+          "rgba(255,255,255,0.2)",
+          "rgba(255,255,255,0.4)",
+          "rgba(255,255,255,0.8)"
+        ]
+      },
+      "electric-tint": {
+        "role": "primary",
+        "displayName": "Electric Tint",
+        "canonical": "rgba(37, 99, 235, 0.1)",
+        "tonalRamp": [
+          "rgba(37,99,235,0.05)",
+          "rgba(37,99,235,0.1)",
+          "rgba(37,99,235,0.2)",
+          "rgba(37,99,235,0.3)",
+          "rgba(37,99,235,0.4)",
+          "rgba(37,99,235,0.5)",
+          "rgba(37,99,235,0.6)",
+          "rgba(37,99,235,1)"
+        ]
+      },
+      "whatsapp-green": {
+        "role": "tertiary",
+        "displayName": "WhatsApp Green",
+        "canonical": "#25d366",
+        "tonalRamp": [
+          "#0b3d1f",
+          "#105c2e",
+          "#167a3d",
+          "#1da84f",
+          "#25d366",
+          "#5ee08d",
+          "#97ebb4",
+          "#d3f7e0"
+        ]
+      },
+      "success": {
+        "role": "tertiary",
+        "displayName": "Success",
+        "canonical": "#4ade80",
+        "tonalRamp": [
+          "#14532d",
+          "#166534",
+          "#15803d",
+          "#16a34a",
+          "#22c55e",
+          "#4ade80",
+          "#86efac",
+          "#dcfce7"
+        ]
+      },
+      "error": {
+        "role": "tertiary",
+        "displayName": "Error",
+        "canonical": "#f87171",
+        "tonalRamp": [
+          "#7f1d1d",
+          "#991b1b",
+          "#b91c1c",
+          "#dc2626",
+          "#ef4444",
+          "#f87171",
+          "#fca5a5",
+          "#fee2e2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only; Archivo 800 at 112% width, fluid 2.5–4.75rem."
+      },
+      "display-mobile": {
+        "displayName": "Display (mobile floor)",
+        "purpose": "Lower end of the hero clamp."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Process step numbers 01–04 and portrait initials; 115% width, tabular."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles; 800 at 112% width, fluid 2–3.5rem; one key word in signal-blue."
+      },
+      "headline-mobile": {
+        "displayName": "Headline (mobile floor)",
+        "purpose": "Lower end of the headline clamp."
+      },
+      "modal-title": {
+        "displayName": "Modal title",
+        "purpose": "Project modal heading, headline role at 2.125rem."
+      },
+      "title-lg": {
+        "displayName": "Title (large)",
+        "purpose": "Service row titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card, step, team-name, and panel titles; weight 650."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "Venyx Technology in nav and footer; 750 at 110% width."
+      },
+      "body-lead": {
+        "displayName": "Body Lead",
+        "purpose": "Hero lead and section intros."
+      },
+      "body-plus": {
+        "displayName": "Body Plus",
+        "purpose": "Service descriptions, contact promises, direct links."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Step descriptions and modal prose."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Project card blurbs, captions, footer legal."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase 0.75rem at 110% width and 0.1em tracking: fact strip, chip-group labels, footer column titles. Never above a section heading."
+      }
+    },
+    "shadows": [
+      {
+        "name": "floating",
+        "value": "0 24px 48px -16px rgba(0, 0, 0, 0.6)",
+        "purpose": "Contact form, mobile menu."
+      },
+      {
+        "name": "modal",
+        "value": "0 32px 64px -16px rgba(0, 0, 0, 0.7)",
+        "purpose": "Project modal."
+      },
+      {
+        "name": "action-glow",
+        "value": "0 8px 24px -10px rgba(37, 99, 235, 0.7)",
+        "purpose": "Hero primary button and contact submit at rest."
+      },
+      {
+        "name": "action-glow-hover",
+        "value": "0 12px 32px -10px rgba(37, 99, 235, 0.9)",
+        "purpose": "Primary and submit on hover."
+      },
+      {
+        "name": "whatsapp-glow",
+        "value": "0 10px 24px -8px rgba(37, 211, 102, 0.6)",
+        "purpose": "Floating WhatsApp button; 0 14px 32px -8px at 0.8 on hover."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Arrivals: hero copy, portraits, modal."
+      },
+      {
+        "name": "hero-copy",
+        "value": "rise-in 800ms (opacity 0→1, translateY 16px→0)",
+        "purpose": "Hero text on load."
+      },
+      {
+        "name": "portrait-reveal",
+        "value": "1000ms clip-path inset(100% 0 0 0)→0, blur 8px→0, translateY 16px→0; delay 250ms + 90ms per portrait",
+        "purpose": "The one authored moment: founders reveal in the hero."
+      },
+      {
+        "name": "modal-in",
+        "value": "320ms opacity + translateY 8px + scale 0.98→1",
+        "purpose": "Project modal entrance."
+      },
+      {
+        "name": "fade-in",
+        "value": "200ms ease-out",
+        "purpose": "Scrim, menus, status messages, image swaps."
+      },
+      {
+        "name": "state-change",
+        "value": "300ms",
+        "purpose": "Hover color, border, and shadow."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "250ms fade only",
+        "purpose": "prefers-reduced-motion: reduce replaces hero and modal motion; hover transforms are motion-safe only."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call to action (hero 'Falar com um sócio'); solid electric blue with an offset action glow.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Falar com um sócio <svg class=\"ds-btn-primary-icon\" xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 28px; border-radius: 8px; background: #2563eb; color: #ffffff; font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-weight: 600; font-size: 16px; text-decoration: none; box-shadow: 0 8px 24px -10px rgba(37, 99, 235, 0.7); transition: background 300ms, box-shadow 300ms; } .ds-btn-primary:hover { background: #3b82f6; box-shadow: 0 12px 32px -10px rgba(37, 99, 235, 0.9); } .ds-btn-primary:focus-visible { outline: 2px solid #60a5fa; outline-offset: 3px; } .ds-btn-primary-icon { transition: transform 300ms; } .ds-btn-primary:hover .ds-btn-primary-icon { transform: translateX(4px); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary action next to the primary (hero 'Chamar no WhatsApp'); translucent with a hairline border.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Chamar no WhatsApp</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; padding: 16px 28px; border-radius: 8px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: #e2e8f0; font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-weight: 600; font-size: 16px; text-decoration: none; transition: background 300ms, color 300ms; } .ds-btn-secondary:hover { background: rgba(255, 255, 255, 0.1); color: #ffffff; } .ds-btn-secondary:focus-visible { outline: 2px solid #60a5fa; outline-offset: 3px; }"
+    },
+    {
+      "name": "Pill CTA",
+      "kind": "button",
+      "refersTo": "button-pill-cta",
+      "description": "Tinted pill that fills solid blue on hover (nav 'Iniciar Projeto').",
+      "html": "<a class=\"ds-btn-pill\" href=\"#\">Iniciar Projeto</a>",
+      "css": ".ds-btn-pill { display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 9999px; background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); color: #60a5fa; font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-weight: 500; font-size: 14px; text-decoration: none; transition: background 300ms, color 300ms ; } .ds-btn-pill:hover { background: #2563eb; color: #ffffff; } .ds-btn-pill:focus-visible { outline: 2px solid #60a5fa; outline-offset: 3px; }"
+    },
+    {
+      "name": "Submit Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Contact form submit; uppercase label type with submit glow.",
+      "html": "<button class=\"ds-btn-submit\" type=\"button\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m22 2-7 20-4-9-9-4Z\"/><path d=\"M22 2 11 13\"/></svg>Enviar mensagem</button>",
+      "css": ".ds-btn-submit { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 16px 40px; border: none; border-radius: 8px; background: #2563eb; color: #ffffff; font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; box-shadow: 0 8px 24px -10px rgba(37, 99, 235, 0.7); transition: background 300ms, box-shadow 300ms; } .ds-btn-submit:hover { background: #3b82f6; box-shadow: 0 12px 32px -10px rgba(37, 99, 235, 0.9); } .ds-btn-submit:focus-visible { outline: 2px solid #60a5fa; outline-offset: 3px; } .ds-btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Contact form field on a recessed night background with a blue focus ring.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Nome *</span><input class=\"ds-input\" type=\"text\" placeholder=\"Seu nome completo\" /></label>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 8px; width: 320px; font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; } .ds-field-label { font-size: 14px; font-weight: 600; color: #cbd5e1; } .ds-input { background: #030712; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 14px 16px; color: #ffffff; font-size: 16px; font-family: inherit; outline: none; caret-color: #60a5fa; transition: border-color 150ms, box-shadow 150ms; } .ds-input::placeholder { color: #94a3b8; } .ds-input:focus, .ds-input:focus-visible { border-color: #3b82f6; box-shadow: 0 0 0 1px #3b82f6; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card-project",
+      "description": "Portfolio card; the whole card is one button (stretched title), with an always-visible 'Ver detalhes'.",
+      "html": "<article class=\"ds-card-project\"><div class=\"ds-card-project-media\"></div><div class=\"ds-card-project-body\"><h3 class=\"ds-card-project-title\"><button type=\"button\">Sistema de Gestão Logística</button></h3><p class=\"ds-card-project-text\">Plataforma completa para rastreamento de frotas e otimização de rotas em tempo real.</p><div class=\"ds-card-project-chips\"><span>React</span><span>Node.js</span><span>PostgreSQL</span></div><span class=\"ds-card-project-more\">Ver detalhes <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9 18 6-6-6-6\"/></svg></span></div></article>",
+      "css": ".ds-card-project { position: relative; width: 340px; display: flex; flex-direction: column; overflow: hidden; border-radius: 16px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; transition: border-color 300ms; } .ds-card-project:hover { border-color: rgba(59, 130, 246, 0.4); } .ds-card-project:has(:focus-visible) { border-color: #60a5fa; box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.4); } .ds-card-project-media { aspect-ratio: 16 / 10; background: linear-gradient(135deg, #1e3a8a, #0a0f1a); } .ds-card-project-body { padding: 24px; display: flex; flex-direction: column; } .ds-card-project-title { margin: 0; font-size: 20px; font-weight: 650; letter-spacing: -0.012em; color: #ffffff; } .ds-card-project-title button { all: unset; cursor: pointer; } .ds-card-project-title button::after { content: ''; position: absolute; inset: 0; } .ds-card-project-text { margin: 12px 0 0; font-size: 14px; line-height: 1.625; color: #94a3b8; } .ds-card-project-chips { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; } .ds-card-project-chips span { padding: 4px 12px; border-radius: 9999px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: #cbd5e1; font-size: 12px; font-weight: 500; } .ds-card-project-more { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #60a5fa; transition: color 300ms; } .ds-card-project:hover .ds-card-project-more { color: #93c5fd; }"
+    },
+    {
+      "name": "Tech Chip",
+      "kind": "chip",
+      "refersTo": "chip-tech",
+      "description": "Small pill listing a technology on portfolio cards.",
+      "html": "<span class=\"ds-chip-tech\">React</span> <span class=\"ds-chip-tech\">Node.js</span> <span class=\"ds-chip-tech\">PostgreSQL</span>",
+      "css": ".ds-chip-tech { display: inline-block; padding: 4px 12px; border-radius: 9999px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: #cbd5e1; font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 500; }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": "button-pill-cta",
+      "description": "Scrolled state of the fixed navbar: wordmark left, links and pill CTA right.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-brand\" href=\"#\">Venyx <span class=\"ds-nav-brand-accent\">Technology</span></a><div class=\"ds-nav-links\"><a class=\"ds-nav-link\" href=\"#\">Serviços</a><a class=\"ds-nav-link\" href=\"#\">Como funciona</a><a class=\"ds-nav-link\" href=\"#\">Portfólio</a><a class=\"ds-nav-link\" href=\"#\">Especialistas</a><a class=\"ds-nav-cta\" href=\"#\">Iniciar Projeto</a></div></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 16px 48px; background: rgba(3, 7, 18, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); font-family: \"Archivo Variable\", ui-sans-serif, system-ui, sans-serif; } .ds-nav-brand { font-size: 22px; font-weight: 750; font-stretch: 110%; letter-spacing: -0.02em; color: #ffffff; text-decoration: none; } .ds-nav-brand-accent { color: #3b82f6; } .ds-nav-links { display: flex; align-items: center; gap: 32px; font-size: 14px; font-weight: 500; } .ds-nav-link { color: #e2e8f0; text-decoration: none; transition: color 150ms; } .ds-nav-link:hover { color: #60a5fa; } .ds-nav-link:focus-visible, .ds-nav-cta:focus-visible { outline: 2px solid #60a5fa; outline-offset: 3px; } .ds-nav-cta { padding: 10px 20px; border-radius: 9999px; background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); color: #60a5fa; text-decoration: none; transition: background 300ms, color 300ms, box-shadow 300ms; } .ds-nav-cta:hover { background: #2563eb; color: #ffffff; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Sala de Engenharia (The Engineering Room)",
+    "overview": "The site is a dark, quiet workroom where software gets built, and the people who build it stand at the front. The room is near-black navy (`night`), the work surfaces are slightly lighter panels, and the only light that matters is one electric blue that marks where you can act. The founders' real faces open the page; engineering shows through honest detail (the shared stack, process steps, technology chips), never through costume code or decoration.\n\nDensity is generous. Sections breathe on a 96–128px vertical rhythm. Section headers split on desktop (a wide, heavy headline on the left, the intro on the right), and content lives in a 1280px container. Two moments are peaks: the process diagram on its own panel band, and the closing contact spread. Precision comes from thin hairline borders, consistent corner radii, and restrained color. Nothing is loud except the action.\n\nThe look must never read as a generic agency template or as a playful, childish startup. Seriousness comes from engineering detail, not from corporate coldness: real faces and direct contact stay visible.",
+    "keyCharacteristics": [
+      "Dark tonal layers (`abyss` → `night` → `panel`) separated by white hairlines at 5–10% opacity.",
+      "One accent family: Azul Elétrico, with indigo used only as the far end of a blue gradient bar or avatar ring.",
+      "Blue glow is reserved for primary actions and the WhatsApp button.",
+      "Headings carry one key word or phrase in solid `signal-blue`; no gradient text.",
+      "Archivo in two registers: wide and heavy for headings, normal width for reading; no monospace costume.",
+      "One authored motion moment (the founders' portraits revealing in the hero); everything else is feedback."
+    ],
+    "rules": [
+      {
+        "name": "The One Light Rule",
+        "body": "Blue is the only chromatic color in the interface. Indigo exists only inside a gradient that starts in blue; green belongs only to WhatsApp and success messages.",
+        "section": "colors"
+      },
+      {
+        "name": "The Solid Means Clickable Rule",
+        "body": "A solid `electric-blue` fill appears only on interactive elements (at rest or on hover). Decorative blue uses `electric-tint`, `signal-blue` text, or a gradient bar.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Blue Word Rule",
+        "body": "A heading highlights exactly one word or short phrase in solid `signal-blue`. Never two highlights, never gradient text.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Eyebrow Rule",
+        "body": "No kicker, badge, or label sits above a heading. The heading carries its own weight.",
+        "section": "typography"
+      },
+      {
+        "name": "The Two Widths Rule",
+        "body": "Width is a role signal: 110–115% for display, headlines, numerals, wordmark, and labels; 100% for anything people read in sentences.",
+        "section": "typography"
+      },
+      {
+        "name": "The Action Glow Rule",
+        "body": "Only the primary action buttons and the WhatsApp button glow, and the glow is offset downward like light falling from the control. Static content, cards, icons, and the page background never glow. The design detector flags these three glows as `dark-glow`; they are a deliberate, user-confirmed exception.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** keep every surface on the `abyss` / `night` / `panel` ladder and separate layers with 1px white hairlines at 5% or 10%.",
+      "**Do** reserve solid `electric-blue` for interactive elements, and glow for primary actions and WhatsApp only (The Solid Means Clickable Rule, The Action Glow Rule).",
+      "**Do** highlight exactly one word or phrase per heading in solid `signal-blue`.",
+      "**Do** use 16px radius for cards and panels, 8px for buttons and inputs, full rounding for pills, avatars, and icon buttons.",
+      "**Do** show engineering through honest specifics: the shared stack, the process, technology chips, real faces.",
+      "**Do** keep real faces and direct contact (WhatsApp, e-mail) visible; they are part of the look.",
+      "**Do** keep body and placeholder text at `text-muted` or brighter (≥4.5:1 on `night`)."
+    ],
+    "donts": [
+      "**Don't** make it look like a generic agency template: no interchangeable stock-photo heroes, no grid of same-size icon-plus-heading cards, no buzzword sections without specifics.",
+      "**Don't** drift toward a childish startup look: no pastel palettes, cute mascots or illustrations, rocket icons, bouncing animations, or playful bubbly shapes.",
+      "**Don't** introduce a second accent hue. Indigo appears only as the end of a blue gradient; green only for WhatsApp and success.",
+      "**Don't** add glows, blurred color blobs, or textures to static content or the page background.",
+      "**Don't** use gradient text, eyebrow labels above headings, or fake code as decoration.",
+      "**Don't** add auto-scrolling marquees or looping ambient animation.",
+      "**Don't** use shadows for depth on cards at rest; depth comes from tonal layers and hairlines."
+    ]
+  }
+}

@@ -1,40 +1,65 @@
-import React from 'react';
-import { Monitor, Globe, Database } from 'lucide-react';
-import FadeIn from './FadeIn';
+import { Monitor, Smartphone, Database } from 'lucide-react';
+import SectionHeading from './SectionHeading';
+
+const services = [
+    {
+        icon: <Monitor size={22} aria-hidden="true" className="mt-1.5 shrink-0 text-blue-400" />,
+        title: 'Sites e landing pages',
+        desc: 'Seu negócio apresentado com clareza em qualquer tela: rápido para abrir e preparado para ser encontrado no Google.',
+        examples: ['Site institucional', 'Landing page de campanha', 'Loja virtual'],
+    },
+    {
+        icon: <Smartphone size={22} aria-hidden="true" className="mt-1.5 shrink-0 text-blue-400" />,
+        title: 'Aplicativos para celular',
+        desc: 'Apps para iOS e Android que seus clientes ou sua equipe instalam e usam no dia a dia.',
+        examples: ['App de agendamento', 'App de delivery', 'App para equipe de campo'],
+    },
+    {
+        icon: <Database size={22} aria-hidden="true" className="mt-1.5 shrink-0 text-blue-400" />,
+        title: 'Sistemas e plataformas',
+        desc: 'Sistemas que organizam a operação da empresa: gestão de clientes (CRM), gestão da empresa (ERP), produtos vendidos por assinatura (SaaS) e integrações entre ferramentas (APIs).',
+        examples: ['Controle de estoque e vendas', 'Gestão de clientes', 'Plataforma por assinatura'],
+    },
+];
 
 export default function Servicos() {
-    const servicesData = [
-        { icon: <Monitor size={32} />, title: "Web & Landing Pages", desc: "Sites de alta conversão, rápidos e com SEO otimizado. A vitrine perfeita para sua empresa na internet." },
-        { icon: <Globe size={32} />, title: "Aplicativos Mobile", desc: "Apps iOS e Android com performance nativa e design intuitivo que engajam seus usuários." },
-        { icon: <Database size={32} />, title: "Sistemas & Arquitetura", desc: "Plataformas complexas, CRMs, ERPs e APIs escaláveis prontas para suportar o crescimento do seu negócio." }
-    ];
-
     return (
-        <section id="servicos" className="py-24 relative">
-            <div className="max-w-7xl mx-auto px-6 md:px-12">
-                <FadeIn>
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Nossa <span className="text-blue-400">Expertise</span></h2>
-                        <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-                            Dominamos as tecnologias mais modernas do mercado para entregar soluções que resolvem problemas reais.
-                        </p>
-                    </div>
-                </FadeIn>
+        <section id="servicos" aria-labelledby="servicos-title" className="py-24 md:py-32">
+            <div className="mx-auto max-w-7xl px-6 md:px-12">
+                <SectionHeading
+                    id="servicos-title"
+                    intro="Do primeiro site de um pequeno negócio ao sistema que organiza uma grande empresa. Explicamos cada escolha sem jargão."
+                >
+                    O que <span className="text-blue-400">construímos</span>
+                </SectionHeading>
 
-                <div className="grid md:grid-cols-3 gap-8">
-                    {servicesData.map((service, idx) => (
-                        <FadeIn key={idx} delay={idx * 150} direction={idx % 2 === 0 ? 'right' : 'left'}>
-                            <div className="group h-full bg-white/[0.02] border border-white/5 rounded-2xl p-8 hover:bg-white/[0.04] hover:border-blue-500/30 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-[50px] group-hover:bg-blue-500/20 transition-all"></div>
-                                <div className="w-16 h-16 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                    {service.icon}
-                                </div>
-                                <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                                <p className="text-slate-400 leading-relaxed">{service.desc}</p>
+                <ul className="mt-16 border-t border-white/10 md:mt-20">
+                    {services.map(({ icon, title, desc, examples }) => (
+                        <li
+                            key={title}
+                            className="grid gap-5 border-b border-white/10 py-9 md:grid-cols-12 md:gap-8 md:py-12"
+                        >
+                            <div className="flex items-start gap-3 md:col-span-4">
+                                {icon}
+                                <h3 className="type-title text-2xl text-white md:text-[1.75rem]">{title}</h3>
                             </div>
-                        </FadeIn>
+                            <p className="text-[1.0625rem] leading-relaxed text-slate-300 md:col-span-5">{desc}</p>
+                            <div className="md:col-span-3">
+                                <p className="type-label mb-3 text-slate-400">Exemplos</p>
+                                <ul className="flex flex-wrap gap-2">
+                                    {examples.map((example) => (
+                                        <li
+                                            key={example}
+                                            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300"
+                                        >
+                                            {example}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </li>
                     ))}
-                </div>
+                </ul>
             </div>
         </section>
     );
